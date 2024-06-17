@@ -23,6 +23,7 @@ repositories {
 
 dependencies {
     implementation project(':db') // implement project db
+    implementation project(':common') // implement project common
 
     compileOnly 'org.projectlombok:lombok' // lombok
     annotationProcessor 'org.projectlombok:lombok'
@@ -31,6 +32,8 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity5
     implementation group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity5', version: '3.0.4.RELEASE'
+
+    implementation 'org.springframework.boot:spring-boot-starter-amqp' // spring-boot-starter-amqp
 
     implementation 'org.springframework.boot:spring-boot-starter-web' // spring-boot-starter-web
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

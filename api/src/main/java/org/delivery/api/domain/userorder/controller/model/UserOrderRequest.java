@@ -12,6 +12,9 @@ import java.util.List;
 @AllArgsConstructor
 public class UserOrderRequest {
 
+    @NotNull
+    private Long storeId;
+
     /**
      * 주문
      * 특정 사용자 - 특정 메뉴 주문

@@ -1,37 +1,28 @@
-package org.delivery.db.userorder;
+package org.delivery.storeadmin.domain.userorder.controller.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
-import org.delivery.db.BaseEntity;
 import org.delivery.db.userorder.enums.UserOrderStatus;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
-@SuperBuilder
-@Entity
-@Table(name = "user_order")
-public class UserOrderEntity extends BaseEntity {
+@Builder
+public class UserOrderResponse {
 
-    @Column(nullable = false)
-    private Long userId;
+    private Long id;
 
-    @Column(nullable = false)
     private Long storeId;
 
-    @Column(length = 50, nullable = false)
-    @Enumerated(EnumType.STRING)
+    private Long userId;
+
     private UserOrderStatus status;
 
-    @Column(precision = 11, scale = 4, nullable = false)
     private BigDecimal amount;
 
     private LocalDateTime orderedAt;
